@@ -1,37 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ca">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curs d'Interaccions amb JavaScript</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Capçalera amb títol del curs i imatge de fons -->
-  <header class="header">
-    <div class="header-overlay">
-      <h1>Curs de JavaScript: Interaccions amb el DOM</h1>
-    </div>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Curs d'Interaccions amb JavaScript</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- Capçalera amb títol del curs i imatge de fons -->
+        <header class="header">
+            <div class="header-overlay">
+                <h1>Curs de JavaScript: Interaccions amb el DOM</h1>
+            </div>
+        </header>
 
-  <!-- Barra de navegació -->
-  <nav class="navbar">
-    <button class="nav-btn active" onclick="showSection('home')">Home</button>
-  </nav>
+        <!-- Barra de navegació -->
+        <nav class="navbar">
+            <button class="nav-btn active" onclick="showSection('home')">Home</button>
+            <button class="nav-btn" onclick="showSection('atributs')">Modificar atributs HTML</button>
+        </nav>
 
-  <!-- Contingut central -->
-  <main class="main-content">
-    <section id="home" class="content-section">
-      <h2>Benvinguts al Curs</h2>
-      <p>Aquest curs està dissenyat per aprendre a interactuar de manera dinàmica amb els elements del DOM mitjançant JavaScript pur.</p>
-    </section>
-  </main>
+        <!-- Contingut central -->
+        <main class="main-content">
+            <section id="home" class="content-section">
+                <h2>Benvinguts al Curs</h2>
+                <p>
+                    Aquest curs està dissenyat per aprendre a interactuar de manera dinàmica amb els elements del DOM
+                    mitjançant JavaScript pur.
+                </p>
+            </section>
+            <section id="atributs" class="content-section" style="display: none">
+                <h2>Modificació d'Atributs HTML</h2>
+                <p>
+                    Podem utilitzar mètodes com <code>setAttribute()</code> o l'accés directe a propietats de l'element
+                    per variar atributs com <code>src</code>, <code>href</code> o <code>alt</code>.
+                </p>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>Curs de JavaScript &copy; 2026 - Desenvolupament Web</p>
-  </footer>
+                <div class="demo-box">
+                    <img
+                        id="imatge-demo"
+                        src="https://placehold.co/150x100/blue/white?text=Blau"
+                        alt="Quadre blau"
+                        style="display: block; margin-bottom: 10px; border-radius: 4px"
+                    />
+                    <button class="action-btn" onclick="canviarImatge()">Canviar atribut SRC</button>
+                </div>
+            </section>
+        </main>
 
-  <script src="script.js"></script>
-</body>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Curs de JavaScript &copy; 2026 - Desenvolupament Web</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
 </html>
