@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Documentació Git Flow - Pràctica 1</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                max-width: 900px;
+                margin: 40px auto;
+                padding: 0 20px;
+                color: #333;
+            }
+            h1,
+            h2,
+            h3 {
+                color: #2b6cb0;
+            }
+            pre {
+                background: #2d3748;
+                color: #f7fafc;
+                padding: 15px;
+                border-radius: 6px;
+                overflow-x: auto;
+            }
+            .screenshot-placeholder {
+                border: 2px dashed #cbd5e0;
+                padding: 30px;
+                text-align: center;
+                margin: 15px 0;
+                background: #f7fafc;
+                color: #718096;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Documentació: Metodologia Git Flow</h1>
+
+        <section>
+            <h2>1. Introducció Teòrica</h2>
+            <p>
+                <strong>Git:</strong> És un sistema de control de versions distribuït que permet registrar els canvis
+                realitzats sobre arxius de codi font al llarg del temps, facilitant el treball en equip i la
+                traçabilitat.
+            </p>
+            <p>
+                <strong>Metodologia Git Flow:</strong> És un model d'organització de branques proposat per Vincent
+                Driessen que assigna rols específics a diferents tipus de branques:
+            </p>
+            <ul>
+                <li>
+                    <strong>main / master:</strong> Conté exclusivament el codi en producció, estable i etiquetat amb
+                    versions (tags).
+                </li>
+                <li>
+                    <strong>develop:</strong> Branca de desenvolupament principal on s'integren les noves funcionalitats
+                    preparades.
+                </li>
+                <li>
+                    <strong>feature/*:</strong> Branques auxiliars temporals per desenvolupar característiques
+                    concretes. Neixen de <code>develop</code> i es fusionen de nou a <code>develop</code>.
+                </li>
+                <li>
+                    <strong>release/*:</strong> Branques per preparar el llançament d'una versió, ajustar detalls menors
+                    i etiquetar. Es fusionen tant a <code>main</code> com a <code>develop</code>.
+                </li>
+                <li>
+                    <strong>hotfix/*:</strong> Branques d'emergència creades a partir de <code>main</code> per
+                    solucionar problemes detectats a producció sense haver d'esperar al cicle de desenvolupament
+                    ordinari.
+                </li>
+            </ul>
+            <p>
+                <strong>Per què l'utilitzem?</strong> Permet a múltiples desenvolupadors col·laborar en paral·lel sense
+                interferir entre ells ni comprometre l'estabilitat del codi principal en producció.
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Procés Realitzat i Evidències</h2>
+
+            <h3>Pas 1: Inicialització per l'Usuari 1</h3>
+            <p>Es crea el repositori remot, la branca develop i la base de la pàgina web.</p>
+            <div class="screenshot-placeholder">[Inserir captura de: git log / terminals inicials]</div>
+
+            <h3>Pas 2: Funcionalitats de l'Usuari 2</h3>
+            <p>
+                Implementació de <code>feature/contingutHTML</code> i <code>feature/atributsHTML</code> amb els seus
+                corresponents merges sense fast-forward.
+            </p>
+            <div class="screenshot-placeholder">[Inserir captura de: merge de contingutHTML i atributsHTML]</div>
+
+            <h3>Pas 3: Funcionalitat i Release v1.0 de l'Usuari 3</h3>
+            <p>
+                Implementació de <code>feature/estilsCSS</code>, creació de la branca <code>release/v1.0</code>,
+                etiqueta tag i sincronització de branques.
+            </p>
+            <div class="screenshot-placeholder">[Inserir captura de: tag v1.0 a GitHub i branques]</div>
+
+            <h3>Pas 4: Hotfix de l'Usuari 1</h3>
+            <p>
+                Creació de <code>hotfix/milloresV_1_0</code> des de <code>main</code>, aplicació del canvi i tag
+                <code>v1.0.1</code>.
+            </p>
+            <div class="screenshot-placeholder">[Inserir captura de: branca hotfix i historial de commits]</div>
+
+            <h3>Pas 5: Gestió al Tauler Kanban (GitHub Projects)</h3>
+            <p>Seguiment de les targetes de feina creades amb el seu cicle de vida (Backlog, In Progress, Done).</p>
+            <div class="screenshot-placeholder">[Inserir captura del tauler Projects amb les 4 targetes]</div>
+        </section>
+    </body>
+</html>
