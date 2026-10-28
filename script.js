@@ -34,3 +34,13 @@ function canviarEstil() {
     element.style.backgroundColor = "#e53e3e";
     element.style.borderRadius = "4px";
 }
+
+// [Usuari 1] Hotfix: Millora en la funció per admetre etiquetes HTML i confirmació visual
+function canviarText() {
+    const element = document.getElementById("paragraf-canviant");
+    // Millora amb format HTML ric
+    element.innerHTML =
+        "<strong>Text millorat (v1.0.1):</strong> Contingut actualitzat amb etiquetes <em>HTML</em> i estil dinàmic.";
+    element.style.borderLeft = "4px solid #38a169";
+    element.style.paddingLeft = "8px";
+}
